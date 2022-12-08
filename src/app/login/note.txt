@@ -22,3 +22,35 @@ data binding in angular
         1.2.2:-event binding using $event
              eg:-(eventname)="methodname($event)" 
         1.2.3:-event binding using template rendering variable #variable
+      
+
+   2-two way binding:- 
+     
+      2.1:-ng modal
+         eg:-[(ngmodal)]="value"  
+
+          formsmodule:-is used to implements the ngmodule in our project
+
+
+Redierection in angular
+-----------------------
+navigateByurl -method used to Redierection
+ Router - class
+ approutingModule - module
+
+ dependency injection
+ --------------------
+ to use a method of class in another class
+ -this mrthod is used in constructor
+ steps
+  accesspecifier -public/private
+  variable  
+  class name
+
+  eg:- private var:classname 
+
+
+
+  angular services
+  ----------------
+  service creating code :- ng g s servicename

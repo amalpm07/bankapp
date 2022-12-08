@@ -1,0 +1,33 @@
+.text-center{
+    margin-top: 100px;
+    background-color: rgba(0, 0, 0, 0.442);
+    border: none;
+    border-radius: 30px;
+    width: 400px;
+}
+
+.head{
+    color: white;
+}
+.input{
+    width: 200px;
+    margin-left: 70px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.452);
+}
+.link{
+    color: white;
+    margin-top: 5px;
+    position: absolute;
+    margin-left: 40px;
+}
+.w1{
+    margin-top: 4px;
+    background-color: rgba(0, 0, 0, 0.442);
+    border: none;
+    border-radius: 30px;
+    width: 400px;
+}
+.tr{
+    
+}

@@ -1,13 +1,14 @@
 <!-- <div>
     <h1>{{aim}}</h1>
 </div> -->
-
+<form action="" (ngSubmit)="login()">
  <div class="container p-5  mt-8   text-center">
     <h1 class="head">Login</h1>
 
-    <input  class="form-control mt-3 input" name="acno" #acno type="text" [placeholder]="data" id="acid"><br>
-    <input  class="form-control mt-3 input" name="psw" #psw type="password" placeholder="Password" id="pid"><br>
-    <button  type="submit" (click)="login(acno,psw)"  class="btn btn-dark  mt-2">login</button><br>
-    <a class="link" href="">Register here</a>
+    <input  class="form-control mt-3 input" name="acno" [(ngModel)]="acno"  type="text" [placeholder]="data" id="acid"><br>
+    <input  class="form-control mt-3 input" name="psw" [(ngModel)]="psw"  type="password" placeholder="Password" id="pid"><br>
+    <button  type="submit" (click)="login()"  class="btn btn-dark  mt-2">login</button><br>
+    <a routerLink="register" class="link" href="">Register here</a>
 
 </div>
+</form>
