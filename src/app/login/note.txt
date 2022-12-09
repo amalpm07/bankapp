@@ -54,3 +54,16 @@ navigateByurl -method used to Redierection
   angular services
   ----------------
   service creating code :- ng g s servicename
+
+  angular directives
+  ------------------
+  1.structural directives:-to handle structured data(collection)in view of a component
+      ngFor:-can  dierectly apply in html to access elements from  array 
+
+
+form validation in angular
+---------------------------
+we can create forms in two way
+   1:-Template Driven Form 
+
+   2:-Model Driven Form
