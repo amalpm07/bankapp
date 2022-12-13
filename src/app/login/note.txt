@@ -59,7 +59,7 @@ navigateByurl -method used to Redierection
   ------------------
   1.structural directives:-to handle structured data(collection)in view of a component
       ngFor:-can  dierectly apply in html to access elements from  array 
-
+      ngIf
 
 form validation in angular
 ---------------------------
@@ -67,3 +67,32 @@ we can create forms in two way
    1:-Template Driven Form 
 
    2:-Model Driven Form
+      :-Reactive Form
+
+      RecativeFormsModule:- module used to create modal forms
+       
+       FormBuilder:-class of RecativeFormsModule
+
+           model form  conataine group,array,control
+
+           formGroup is a property to use connect ts model to html
+
+
+validate model Form
+--------------------
+
+validator:-a class in angular it includes method for apply validation
+
+
+access errors in vlaidator rule:-
+      this.registerForm.get('uname')?.errors
+                 -valid(error) -empty response
+               
+                  -invalid(error) -content
+
+
+Local Storage in angular
+------------------------
+store - localStorage.setItem()
+access - localStorage.getItem()
+delete - localStorage.removeItem()

@@ -1,28 +1,46 @@
 <h1 class="head">welcome {{user}}</h1>
 <div><a href="" routerLink="/transaction">view transaction history</a></div>
 
-<form action="" (ngSubmit)="deposite()">
+<form action="" (ngSubmit)="deposite()" [formGroup]="depositeForm">
 <div class="container p-5  mt-8   text-center">
     <h1 class="head">Deposite</h1>
 
    
-    <input  class="form-control mt-3 input" name="acno" [(ngModel)]="acno"  type="text" placeholder="Account Number" id="acid"><br>
-    <input  class="form-control mt-3 input" name="psw" [(ngModel)]="psw"  type="password" placeholder="Password" id="pid"><br>
-    <input  class="form-control mt-3 input" name="amount" [(ngModel)]="amnt"  type="text" placeholder="Amount" id="aid"><br>
+    <input  class="form-control mt-3 input" name="acno" formControlName="acno"  type="text" placeholder="Account Number" id="acid"><br>
+    <div *ngIf="this.depositeForm.get('acno')?.errors && this.depositeForm.get('acno')?.touched ">
+        <p class="text-danger">invalid Account number</p>
+    </div>
+    <input  class="form-control mt-3 input" name="psw" formControlName="psw"  type="password" placeholder="Password" id="pid"><br>
+    <div *ngIf="this.depositeForm.get('psw')?.errors && this.depositeForm.get('psw')?.touched ">
+        <p class="text-danger">invalid password</p>
+    </div>
+    <input  class="form-control mt-3 input" name="amount" formControlName="amnt"  type="text" placeholder="Amount" id="aid"><br>
+    <div *ngIf="this.depositeForm.get('amnt')?.errors && this.depositeForm.get('amnt')?.touched ">
+        <p class="text-danger">invalid Amount</p>
+    </div>
     <button  type="submit"   class="btn btn-dark  mt-2">Deposite</button><br>
    
 
 </div>
 </form>
 
-<form action="" (ngSubmit)="withdraw()" >
+<form action="" (ngSubmit)="withdraw()" [formGroup]="withdrawForm">
 <div class="container p-5  mt-8   text-center w1">
     <h1 class="head">Withdraw</h1>
 
    
-    <input  class="form-control mt-3 input" name="accno" [(ngModel)]="accno"   type="text" placeholder="Account Number" id="anid"><br>
-    <input  class="form-control mt-3 input" name="pasw" [(ngModel)]="pasw"  type="password" placeholder="Password" id="psid"><br>
-    <input  class="form-control mt-3 input" name="amont" [(ngModel)]="amont"   type="text" placeholder="Amount" id="amid"><br>
+    <input  class="form-control mt-3 input" name="accno" formControlName="accno"   type="text" placeholder="Account Number" id="anid"><br>
+    <div *ngIf="this.withdrawForm.get('accno')?.errors && this.withdrawForm.get('accno')?.touched ">
+        <p class="text-danger">invalid Account number</p>
+    </div>
+    <input  class="form-control mt-3 input" name="pasw" formControlName="pasw"  type="password" placeholder="Password" id="psid"><br>
+    <div *ngIf="this.withdrawForm.get('pasw')?.errors && this.withdrawForm.get('pasw')?.touched ">
+        <p class="text-danger">invalid password</p>
+    </div>
+    <input  class="form-control mt-3 input" name="amont" formControlName="amont"   type="text" placeholder="Amount" id="amid"><br>
+    <div *ngIf="this.withdrawForm.get('amont')?.errors && this.withdrawForm.get('amont')?.touched ">
+        <p class="text-danger">invalid Account number</p>
+    </div>
     <button  type="submit"  class="btn btn-dark  mt-2">Withdraw</button><br>
    
 

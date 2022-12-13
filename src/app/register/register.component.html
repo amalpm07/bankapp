@@ -1,13 +1,22 @@
 <!-- username
 accno
 pass -->
-<form class="" action="" (ngSubmit)="register()">
+<form class="" action="" (ngSubmit)="register()" [formGroup]="registerForm">
 <div class="container p-5  mt-8   text-center">
     <h1 class="head">Register</h1>
 
-    <input  class="form-control mt-3 input" name="uname" [(ngModel)]="uname"   type="text" placeholder="Username" id="acid"><br>
-    <input  class="form-control mt-3 input" name="acno" [(ngModel)]="acno"  type="text" placeholder="Account Number" id="acid"><br>
-    <input  class="form-control mt-3 input" name="psw" [(ngModel)]="psw"  type="password" placeholder="Password" id="pid"><br>
+    <input  class="form-control mt-3 input" name="uname"  formControlName="uname"  type="text" placeholder="Username" id="acid"><br>
+    <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched ">
+        <p class="text-danger">incurrect username</p>
+    </div>
+    <input  class="form-control mt-3 input" name="acno" formControlName="acno"  type="text" placeholder="Account Number" id="acid"><br>
+    <div *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched ">
+        <p class="text-danger">incurrect Account number</p>
+    </div>
+    <input  class="form-control mt-3 input" name="psw" formControlName="psw"  type="password" placeholder="Password" id="pid"><br>
+    <div *ngIf="this.registerForm.get('psw')?.errors && this.registerForm.get('psw')?.touched ">
+        <p class="text-danger">incurrect password</p>
+    </div>
     <button  type="submit"   class="btn btn-dark  mt-2">Signup</button><br>
    
 
