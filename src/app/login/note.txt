@@ -55,11 +55,15 @@ navigateByurl -method used to Redierection
   ----------------
   service creating code :- ng g s servicename
 
-  angular directives
+  angular directives :- is used to manage DOM in angular
   ------------------
-  1.structural directives:-to handle structured data(collection)in view of a component
+  1.structural directives (manage structur of DOM):-to handle structured data(collection)in view of a component
       ngFor:-can  dierectly apply in html to access elements from  array 
       ngIf
+
+  2.component directives:-
+
+  3.Atribute directives:- is used apply atribute in DOM(eg:[ngclass])
 
 form validation in angular
 ---------------------------
@@ -96,3 +100,16 @@ Local Storage in angular
 store - localStorage.setItem()
 access - localStorage.getItem()
 delete - localStorage.removeItem()
+
+
+
+parent Child Component communication in angular
+----------------------------------------------
+
+
+
+
+Date in Angular
+---------------
+date -class
+create an object of class Date to access date and Time

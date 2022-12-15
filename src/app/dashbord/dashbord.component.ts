@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -15,15 +16,25 @@ export class DashbordComponent {
 // pasw=""
 // amont=""
 user=""
-constructor(private ds:DataService,private fb:FormBuilder){
+acno:any
+dateandtime:any
+constructor(private ds:DataService,private fb:FormBuilder,private router:Router){
   //access username
   this.user=this.ds.currentuser
+  this.dateandtime=new Date()
 }
 depositeForm=this.fb.group({
   acno:['',[Validators.required,Validators.pattern('[0-9]+')]]
 ,psw:['',[Validators.required,Validators.pattern('[0-9]+')]]
 ,amnt:['',[Validators.required,Validators.pattern('[0-9]+')]]
 })
+
+ngOnInit():void{
+  if(!localStorage.getItem('currentacno')){
+    alert('please login first')
+    this.router.navigateByUrl('')
+  }
+}
 
 deposite(){
 var acno=this.depositeForm.value.acno
@@ -57,6 +68,16 @@ withdraw(){
   if(result){
     alert(`${amont} debited to your ac and the balance is ${result}`)
   }
+}
+
+logout(){
+  localStorage.removeItem('currentuser')
+  localStorage.removeItem('currentacno')
+  this.router.navigateByUrl('')
+}
+
+deleteconfirm(){
+this.acno=JSON.parse(localStorage.getItem('currentacno') || "")
 }
 }
 
